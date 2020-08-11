@@ -13,7 +13,7 @@ class Alumno {
         for (let i = 0; i < this.calificaciones.length; i++) {
             promedio = promedio + this.calificaciones[i]
         }
-        return promedio = promedio / this.calificaciones.length;
+        return promedio = (promedio / this.calificaciones.length);
     }
 }
 
@@ -23,7 +23,6 @@ class Salon {
     }
     agregarEstudiante(alumno) {
         this.alumnos.push(alumno);
-        this.tamanio++;
     }
     ordenarPromedio(promedios) {
         var aux = 0;
@@ -36,7 +35,7 @@ class Salon {
                 }
             }
         }
-        return promedios;
+        return this.alumnos;
     }
 }
 
@@ -45,10 +44,18 @@ var alumno2 = new Alumno("Sandy", [10, 10, 10, 10, 10]);
 var alumno3 = new Alumno("Felipe", [6, 7, 8, 10, 8]);
 var alumno4 = new Alumno("Karina", [10, 7, 6, 9, 8]);
 
+var promedio1 = alumno1.promedio();
+var promedio2 = alumno2.promedio();
+var promedio3 = alumno3.promedio();
+var promedio4 = alumno4.promedio();
+
 var salon1 = new Salon();
 salon1.agregarEstudiante(alumno1.promedio());
 salon1.agregarEstudiante(alumno2.promedio());
 salon1.agregarEstudiante(alumno3.promedio());
 salon1.agregarEstudiante(alumno4.promedio());
 
-console.log(salon1.ordenarPromedio(salon1.alumnos));
+
+let promedios = salon1.ordenarPromedio(salon1.alumnos);
+
+console.log(salon1)
